@@ -1,0 +1,7 @@
+{
+  "name": "pedido",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
