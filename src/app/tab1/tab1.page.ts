@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PedidoService } from '../service/pedido.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  pedido: any = {};
+
+  constructor(private service: PedidoService) {
+
+  }
+
+  savePed(): void {
+    this.service.save(this.pedido);
+    this.pedido = {};
+  }
 
 }
