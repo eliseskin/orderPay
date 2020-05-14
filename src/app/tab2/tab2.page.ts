@@ -67,8 +67,8 @@ export class Tab2Page implements OnInit {
     if (this.plt.is('capacitor')) {
       this.pdfObj.getBuffer((buffer) => {
         const blob = new Blob([buffer], {type: 'application/pdf'});
-        this.file.writeFile(this.file.externalDataDirectory, 'Pedido.pdf', blob, {replace: true}).then(fileEntry => {
-          this.fileOpener.open(this.file.externalDataDirectory + 'Pedido.pdf', 'application/pdf');
+        this.file.writeFile(this.file.externalDataDirectory, `Pedido${new Date()}.pdf`, blob, {replace: true}).then(fileEntry => {
+          this.fileOpener.open(this.file.externalDataDirectory + `Pedido${new Date()}.pdf`, 'application/pdf');
         });
       });
     } else {
