@@ -12,8 +12,15 @@
       <ion-button expand="block" (click)="downloadPdf()">Generar PDF</ion-button>
     </section>
   </ion-card>
+  <ion-item>
+    <ion-badge color="secondary" slot="start">Pagina</ion-badge>
+    <ion-label>Codigo</ion-label>
+    <ion-badge color="danger" slot="end">Catalogo</ion-badge>
+  </ion-item>
   <ion-item *ngFor="let pedido of pedidos" (click)="deletePed(pedido)">
-    <ion-label>| CAT-{{pedido.catalogo}}| PAG-{{pedido.pagina}}| CODIGO-{{pedido.codigo}}</ion-label>
+    <ion-badge color="secondary" slot="start">{{pedido.pagina}}</ion-badge>
+    <ion-label>{{pedido.codigo}}</ion-label>
+    <ion-badge color="danger" slot="end">{{pedido.catalogo}}</ion-badge>
   </ion-item>
 
 </ion-content>

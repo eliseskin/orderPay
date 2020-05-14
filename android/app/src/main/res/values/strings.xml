@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Pedidos</string>
+    <string name="title_activity_main">Pedidos</string>
+    <string name="package_name">com.example.pedidos</string>
+    <string name="custom_url_scheme">com.example.pedidos</string>
+</resources>

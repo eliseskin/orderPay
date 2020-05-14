@@ -54,7 +54,7 @@ export class Tab2Page implements OnInit {
           table: {
             headerRows: 1,
             widths: [ '*', '*', '*', '*', '*'],
-            body: buildTableBody(this.pedidos, ['CATALOGO', 'PAGINA', 'CODIGO', 'COLOR', 'TALLA'])
+            body: buildTableBody(this.pedidos, ['catalogo', 'pagina', 'codigo', 'color', 'talla'])
           }
         }
       ]
@@ -67,8 +67,8 @@ export class Tab2Page implements OnInit {
     if (this.plt.is('capacitor')) {
       this.pdfObj.getBuffer((buffer) => {
         const blob = new Blob([buffer], {type: 'application/pdf'});
-        this.file.writeFile(this.file.dataDirectory, 'Pedido.pdf', blob, {replace: true}).then(fileEntry => {
-          this.fileOpener.open(this.file.dataDirectory + 'Pedido.pdf', 'application/pdf');
+        this.file.writeFile(this.file.externalDataDirectory, 'Pedido.pdf', blob, {replace: true}).then(fileEntry => {
+          this.fileOpener.open(this.file.externalDataDirectory + 'Pedido.pdf', 'application/pdf');
         });
       });
     } else {
